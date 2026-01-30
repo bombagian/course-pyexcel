@@ -47,8 +47,8 @@ const modules = [
 const programDetails = [
   { icon: Clock, label: 'Duration', value: '6 Weeks' },
   { icon: Calendar, label: 'Weekly Sessions', value: '2 Hours In-Person' },
-  { icon: BookOpen, label: 'Online Content', value: '10+ Video Lessons' },
-  { icon: Award, label: 'Certificate', value: 'Upon Completion' },
+  { icon: BookOpen, label: 'Online Content', value: 'Video Lessons' },
+  { icon: Award, label: 'Upon Completion', value: 'Certificate' },
 ]
 
 export default function Program() {
