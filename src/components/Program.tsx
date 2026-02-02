@@ -1,5 +1,16 @@
 import React from 'react'
-import { BookOpen, Code, BarChart3, Rocket, CheckCircle, Clock, Calendar, Award } from 'lucide-react'
+import { BookOpen, Code, BarChart3, Rocket, CheckCircle } from 'lucide-react'
+import yaml from 'js-yaml'
+import instructorsYaml from '../data/instructors.yaml?raw'
+
+interface Instructor {
+  name: string
+  role: string
+  bio: string
+  image: string
+}
+
+const instructors = yaml.load(instructorsYaml) as Instructor[]
 
 const modules = [
   {
@@ -44,13 +55,6 @@ const modules = [
   },
 ]
 
-const programDetails = [
-  { icon: Clock, label: 'Duration', value: '6 Weeks' },
-  { icon: Calendar, label: 'Weekly Sessions', value: '2 Hours In-Person' },
-  { icon: BookOpen, label: 'Online Content', value: 'Video Lessons' },
-  { icon: Award, label: 'Upon Completion', value: 'Certificate' },
-]
-
 export default function Program() {
   return (
     <section id="program" className="relative py-32 overflow-hidden">
@@ -72,20 +76,6 @@ export default function Program() {
           <p className="text-xl text-textSecondary max-w-2xl mx-auto">
             A structured path from Excel user to Python-powered data professional. Each module builds on the last.
           </p>
-        </div>
-
-        {/* Program Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-          {programDetails.map((detail, index) => (
-            <div
-              key={index}
-              className="bg-surface/60 backdrop-blur-xl rounded-xl border border-border p-6 text-center"
-            >
-              <detail.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-2xl font-bold text-text mb-1">{detail.value}</div>
-              <div className="text-sm text-textSecondary">{detail.label}</div>
-            </div>
-          ))}
         </div>
 
         {/* Timeline */}
@@ -140,6 +130,28 @@ export default function Program() {
 
                 {/* Spacer for alternating layout */}
                 <div className="hidden lg:block flex-1" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Instructors */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-bold text-text text-center mb-10">Meet Your Instructors</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {instructors.map((instructor, index) => (
+              <div
+                key={index}
+                className="bg-surface/60 backdrop-blur-xl rounded-2xl border border-border p-8 text-center"
+              >
+                <img
+                  src={instructor.image}
+                  alt={instructor.name}
+                  className="w-24 h-24 rounded-full object-cover border-2 border-primary/20 mx-auto mb-4"
+                />
+                <h4 className="text-xl font-semibold text-text">{instructor.name}</h4>
+                <p className="text-sm text-primary mb-4">{instructor.role}</p>
+                <p className="text-sm text-textSecondary leading-relaxed">{instructor.bio}</p>
               </div>
             ))}
           </div>

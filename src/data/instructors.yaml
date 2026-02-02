@@ -1,0 +1,9 @@
+- name: François Chesnay
+  role: Instructor
+  bio: 'François is a management consultant, non-executive director, educator and coach with expertise in applying artificial intelligence, data science and automation to improve business performance. François is currently a TA for professional courses at Stanford University, including XCS221 Artificial Intelligence: Principles and Techniques and CS224N: Natural Language Processing with Deep Learning.'
+  image: /images/instructor-1.jpg
+
+- name: Gian Bombardieri
+  role: Instructor
+  bio: Gian empowers businesses through data-driven insights and automation, with a particular focus on leveraging AI for strategic decision-making. He leads the Global Data & Analytics practice, guiding C-suites and mentoring staff to become data-driven problem-solvers using AI and data science techniques.
+  image: /images/instructor-2.jpg
